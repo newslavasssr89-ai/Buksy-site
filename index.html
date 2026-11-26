@@ -68,10 +68,49 @@
 .light .feature{background:linear-gradient(160deg,#ffffff 0%,#f0f3f8 100%)}
 .light .feature-body h3{color:#171a24}
 .light .feature-body p,.light .feature-body ul,.light .feature-body li{color:#465366}
-</style></head>
+
+.book-search-section{padding:76px 0 82px;background:linear-gradient(180deg,rgba(40,160,235,.10),rgba(16,190,180,.035) 70%,transparent);border-bottom:1px solid var(--line)}
+.search-gradient{background:linear-gradient(90deg,#75ccff,#43dfd0);background-clip:text;color:transparent}
+.book-search-section .section-head{max-width:850px;margin-bottom:28px}
+.book-search-section .section-head p{max-width:820px}
+.source-panel{padding:24px;border:1px solid var(--line);border-radius:24px;background:var(--panel);box-shadow:var(--shadow)}
+.source-panel-head{display:flex;align-items:center;gap:10px;font-size:15px}.source-dot{width:9px;height:9px;border-radius:50%;background:#43dfb0;box-shadow:0 0 0 5px #43dfb022}.source-count{margin-left:auto;color:var(--accent2);font-size:13px;font-weight:750}
+.source-chips{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.source-chips span{padding:13px 15px;border:1px solid var(--line);border-radius:13px;background:var(--panel2);text-align:center;font-weight:700}
+.source-note{margin-top:16px;color:var(--muted);font-size:14px}
+.search-flow{margin:38px 0 22px}.search-flow-title h3{font-size:28px;margin:6px 0 20px}
+.search-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.search-step{padding:22px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}
+.search-step>span{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:#57baf522;color:var(--accent);font-weight:850}
+.search-step h4{font-size:19px;margin:13px 0 5px}.search-step p{color:var(--muted);margin:0}
+.book-extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.book-extra-card{padding:26px;border-radius:22px;background:var(--panel);border:1px solid var(--line)}
+.extra-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:#57baf522;color:var(--accent);font-size:25px;margin-bottom:16px}
+.book-extra-card h3{font-size:23px;line-height:1.2;margin:8px 0 12px}.book-extra-card p,.book-extra-card li{color:var(--muted)}
+.book-extra-card ul{padding-left:20px;margin-bottom:0}.book-extra-card li{margin:6px 0}
+.book-search-note{margin-top:18px;padding:20px 24px;border-left:3px solid var(--accent2);border-radius:0 16px 16px 0;background:var(--panel);color:var(--muted)}
+.book-search-note b{color:var(--text)}
+@media(max-width:900px){.source-chips{grid-template-columns:repeat(2,1fr)}.search-steps{grid-template-columns:1fr}.book-extra-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.book-search-section{padding:52px 0 58px}.source-panel{padding:18px}.source-chips{gap:8px}.source-chips span{padding:11px 8px;font-size:14px}.book-extra-card{padding:21px}}
+\n</style></head>
 <body>
-<header class="nav"><div class="wrap nav-inner"><a class="brand" href="#top"><span class="logo"><img src="logo-nav.png" alt="Букси" width="38" height="38"></span><span>Букси</span></a><nav class="links"><a href="#library">Библиотека</a><a href="#filters">Фильтры</a><a href="#share">Поделиться</a><a href="#progress">Прогресс</a><a href="#audio">Аудиокниги</a><a href="#custom">Оформление</a><a href="#widgets">Виджеты</a><a href="#backup">Данные</a><a href="#feedback">Связь</a></nav><div class="nav-actions"><button class="theme" id="theme" title="Переключить тему">☼</button><a class="btn primary" href="#install">Установка</a></div></div></header>
-<main id="top">
+<header class="nav"><div class="wrap nav-inner"><a class="brand" href="#top"><span class="logo"><img src="logo-nav.png" alt="Букси" width="38" height="38"></span><span>Букси</span></a><nav class="links"><a href="#book-search">Поиск книг</a><a href="#library">Библиотека</a><a href="#filters">Фильтры</a><a href="#share">Поделиться</a><a href="#progress">Прогресс</a><a href="#audio">Аудиокниги</a><a href="#custom">Оформление</a><a href="#widgets">Виджеты</a><a href="#backup">Данные</a><a href="#feedback">Связь</a></nav><div class="nav-actions"><button class="theme" id="theme" title="Переключить тему">☼</button><a class="btn primary" href="#install">Установка</a></div></div></header>
+<main id="top">\n<section id="book-search" class="book-search-section"><div class="wrap">
+<div class="section-head reveal"><div class="eyebrow">Умное добавление книг</div><h2>Найди книгу — <span class="search-gradient">Букси заполнит всё остальное</span></h2><p>Ищи книги сразу в 8 крупнейших русскоязычных источниках. Выбери подходящий результат — Букси автоматически загрузит доступную информацию с сайта источника: название, автора, обложку, издательство, аннотацию и другие сведения.</p><p><b>Никакого обязательного ручного заполнения.</b> Проверь готовую карточку, внеси свои изменения прямо на этапе добавления или отредактируй книгу в любое время после сохранения.</p></div>
+<div class="source-panel reveal"><div class="source-panel-head"><span class="source-dot"></span><b>Поиск в книжных источниках</b><span class="source-count">8 источников</span></div><div class="source-chips"><span>ЛитРес</span><span>LiveLib</span><span>FantLab</span><span>Author.Today</span><span>Яндекс Книги</span><span>MyBook</span><span>Litnet</span><span>Строки МТС</span></div><div class="source-note">Один поиск вместо переключения между разными сайтами и каталогами.</div></div>
+<div class="search-flow reveal"><div class="search-flow-title"><div class="eyebrow">От запроса до библиотеки</div><h3>Всего несколько шагов</h3></div><div class="search-steps">
+<article class="search-step"><span>01</span><h4>Найди</h4><p>Введи название книги или имя автора и получи результаты из подключённых источников.</p></article>
+<article class="search-step"><span>02</span><h4>Выбери</h4><p>Открой подходящий результат и получи готовые сведения, загруженные с сайта-источника.</p></article>
+<article class="search-step"><span>03</span><h4>Проверь и добавь</h4><p>При необходимости исправь любые поля и сохрани книгу в своей библиотеке.</p></article>
+</div></div>
+<div class="book-extra-grid">
+<article class="book-extra-card reveal"><div class="extra-icon">▧</div><div class="eyebrow">Обложка — на твой выбор</div><h3>Не подошла обложка? Замени её</h3><p>Если на сайте нет изображения, оно не соответствует ожиданиям или тебе просто хочется другую обложку, её можно загрузить самостоятельно:</p><ul><li>по ссылке на изображение в интернете;</li><li>из галереи телефона;</li><li>сделать фотографию камерой — удобно для бумажных книг.</li></ul></article>
+<article class="book-extra-card reveal"><div class="extra-icon">↻</div><div class="eyebrow">Дополнение после добавления</div><h3>Пополняй карточку новыми данными</h3><p>При добавлении Букси автоматически заполняет дополнительные поля, если источник предоставляет эти сведения.</p><p>А если информации не хватает, открой полную карточку книги и потяни экран вниз. Букси попробует найти недостающие или более полные данные на других сайтах и дополнить карточку.</p></article>
+</div>
+<div class="book-search-note reveal"><b>Ты управляешь своей библиотекой.</b> Букси берёт на себя поиск и заполнение, но окончательное решение о том, какие данные и обложка останутся в карточке, всегда за тобой.</div>
+</div></section>
+
+
 <section class="hero"><div class="wrap hero-grid"><div class="reveal"><div class="eyebrow">Только для Android · книги · чтение · аудио</div><h1>Твоя библиотека.<br><span>Твоя история.</span></h1><p class="lead">Букси помогает собрать книги в одном месте, помнить, что читаешь сейчас, отслеживать прогресс и создавать собственную уютную библиотеку. Приложение доступно только для Android.</p><div class="hero-buttons"><a class="btn primary" href="https://github.com/newslavasssr89-ai/Buksy/releases" target="_blank" rel="noopener">Скачать для Android ↗</a><a class="btn secondary" href="#features">Исследовать возможности ↓</a></div><div class="hero-points"><span>✦ Своя книжная коллекция</span><span>✦ Чтение и аудио</span><span>✦ Статистика и оформление</span></div></div><div class="hero-visual reveal"><div class="phone"><div class="phone-inner"><img src="screenshots/1.jpg" alt="Главный экран Букси — сейчас читаю и статистика" loading="eager"></div><div class="phone-label">Главный экран приложения</div></div><div class="floating">Твоя книжная коллекция<b>в одном месте</b></div></div></div></section>
 
 <section id="share" class="share-section"><div class="wrap"><div class="section-head reveal"><div class="eyebrow">Твоя история — красиво</div><h2>Поделись тем, что читаешь.<br><span class="share-gradient">И тем, что уже прочитал.</span></h2><p>Один из самых приятных способов сохранить читательские моменты — показать их другим. В Букси можно быстро подготовить красивую карточку или целую подборку и поделиться ей в любимом мессенджере или соцсети.</p></div><div class="share-highlight reveal"><div class="share-copy"><div class="share-kicker">Несколько касаний — и готово</div><h3>Не нужно собирать пост вручную</h3><p>Выбери нужные книги или период, оформи результат под себя и поделись готовым изображением. Всё самое важное — обложки, названия, оценки и твои читательские итоги — уже собрано вместе.</p><div class="share-pills"><span>✦ Быстро</span><span>✦ Красиво</span><span>✦ В твоём стиле</span></div></div></div>
