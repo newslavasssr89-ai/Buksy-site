@@ -95,30 +95,6 @@
 @media(max-width:900px){.search-shot-row{grid-template-columns:1fr}.source-chips{grid-template-columns:repeat(2,1fr)}.search-steps{grid-template-columns:1fr}.book-extra-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.book-search-section{padding:52px 0 58px}.source-panel{padding:18px}.source-chips{gap:8px}.source-chips span{padding:11px 8px;font-size:14px}.book-extra-card{padding:21px}}
 
-/* Collapsible feature sections */
-.section-spoiler{margin:0 0 18px;border:1px solid var(--line);border-radius:20px;background:var(--panel);overflow:hidden}
-.section-spoiler>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 24px;cursor:pointer;font-size:clamp(18px,2.4vw,23px);font-weight:800;color:var(--text)}
-.section-spoiler>summary::-webkit-details-marker{display:none}
-.section-spoiler>summary:after{content:"＋";flex:0 0 34px;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:11px;color:var(--accent2);font-size:21px;line-height:1}
-.section-spoiler[open]>summary:after{content:"−"}
-.section-spoiler[open]>summary{border-bottom:1px solid var(--line);background:rgba(87,186,245,.045)}
-.section-spoiler-content{padding:0 22px 22px}
-.section-spoiler-content> :first-child{margin-top:20px}
-.section-spoiler-content> :last-child{margin-bottom:0}
-.section-spoiler-content .section-head{margin-top:26px}
-.links a.active{color:var(--accent2);font-weight:800;position:relative}
-.links a.active:after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:2px;border-radius:2px;background:var(--accent2)}
-@media(max-width:900px){
- .nav-inner{height:auto;min-height:64px;flex-wrap:wrap;gap:8px 14px;padding-top:8px}
- .links{display:flex;order:3;width:100%;gap:20px;overflow-x:auto;white-space:nowrap;padding:2px 2px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
- .links::-webkit-scrollbar{display:none}
- .links a{flex:0 0 auto;font-size:13px}
- .links a.active:after{bottom:-5px}
- .section-spoiler{border-radius:16px}
- .section-spoiler>summary{padding:17px 18px}
- .section-spoiler-content{padding:0 14px 16px}
-}
-
 </style></head>
 <body>
 <header class="nav"><div class="wrap nav-inner"><a class="brand" href="#top"><span class="logo"><img src="logo-nav.png" alt="Букси" width="38" height="38"></span><span>Букси</span></a><nav class="links"><a href="#book-search">Поиск книг</a><a href="#features">Библиотека</a><a href="#filters">Фильтры</a><a href="#share">Поделиться</a><a href="#progress">Прогресс</a><a href="#audio">Аудиокниги</a><a href="#custom">Оформление</a><a href="#widgets">Виджеты</a><a href="#backup">Данные</a><a href="#feedback">Связь</a></nav><div class="nav-actions"><button class="theme" id="theme" title="Переключить тему">☼</button><a class="btn primary" href="#install">Установка</a></div></div></header>
@@ -220,30 +196,6 @@
 <footer class="footer"><div class="wrap footer-inner"><span>© Букси · Книги, которые остаются с тобой</span><span>GitHub Pages</span></div></footer>
 <script>
 const themeBtn=document.getElementById('theme');themeBtn.addEventListener('click',()=>{document.body.classList.toggle('light');themeBtn.textContent=document.body.classList.contains('light')?'☾':'☼';});
-
-/* Keep section titles visible and tuck long content and screenshots into spoilers. */
-document.querySelectorAll('main section').forEach(section=>{
-  if(section.id==='top') return;
-  const wrap=section.querySelector(':scope > .wrap');
-  if(!wrap) return;
-  const head=wrap.querySelector(':scope > .section-head');
-  const content=document.createElement('details');
-  content.className='section-spoiler';
-  const summary=document.createElement('summary');
-  const heading=head?.querySelector('h2');
-  summary.textContent=heading?.textContent?.replace(/\\s+/g,' ').trim() || (section.id==='feedback'?'Обратная связь':'Подробнее');
-  content.appendChild(summary);
-  const inner=document.createElement('div');
-  inner.className='section-spoiler-content';
-  if(head){
-    let node=head.nextSibling;
-    while(node){const next=node.nextSibling;inner.appendChild(node);node=next;}
-  }else{
-    while(wrap.firstChild) inner.appendChild(wrap.firstChild);
-  }
-  content.appendChild(inner);
-  wrap.appendChild(content);
-});
 
 /* Highlight the navigation item for the section currently in view. */
 const navLinks=[...document.querySelectorAll('.links a[href^="#"]')];
